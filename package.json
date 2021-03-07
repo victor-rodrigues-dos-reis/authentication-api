@@ -1,0 +1,8 @@
+{
+  "name": "login-api",
+  "version": "1.0.0",
+  "description": "Sistema de login e logout através de API",
+  "main": "index.js",
+  "author": "Victor Reis",
+  "license": "MIT"
+}
