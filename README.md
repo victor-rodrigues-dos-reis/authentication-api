@@ -77,11 +77,14 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 <a  href="https://github.com/victor-rodrigues-dos-reis">
 <img  style="border-radius: 50%;"  src="https://avatars.githubusercontent.com/u/35310267?s=100"  alt="autor"/>  
-
+<br />
 <a  href="https://github.com/victor-rodrigues-dos-reis">
 	<sub><b>Victor Reis</b> 🐱‍👤</sub>
 </a>
 </a>
 
 Feito com ❤️ por Victor Reis 👋🏽 [Entre em contato!](https://www.linkedin.com/in/victor-rodrigues-dos-reis/)
+
+<br />
+
 [![Linkedin Badge](https://img.shields.io/badge/-Victor_Reis-0A66C2?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/victor-rodrigues-dos-reis/)](https://www.linkedin.com/in/victor-rodrigues-dos-reis/) [![Gmail Badge](https://img.shields.io/badge/-victor--rodrigues--dos--reis@hotmail.com-0078D4?style=flat-square&logo=Microsoft-Outlook&logoColor=white&link=mailto:victor-rodrigues-dos-reis@hotmail.com)](mailto:victor-rodrigues-dos-reis@hotmail.com)
