@@ -18,13 +18,13 @@ Sistema de autenticação para ser utilizado em APIs com o objetivo de realizar 
  <h4 align='center'> ✅ Projeto Concluído ✅</h4>
 
 ## 📋 Tabela de conteúdo
-* [Tabela de Conteúdo](#-tabela-de-conteudo)
+* [Tabela de Conteúdo](#-tabela-de-conteúdo)
 * [Funcionalidades](#-funcionalidades)
 * [Como executar o projeto](#-como-executar-o-projeto)
-	* [Pré-requisitos](#-pré--requisitos)
+	* [Pré-requisitos](#-pré-requisitos)
 	* [Rodando a API](#-rodando-a-API)
 * [Tecnologias](#-Tecnologias)
-* [Autor](#-autor)
+* [Autor](#%EF%B8%8F-autor)
   
 
 ## 💡 Funcionalidades
