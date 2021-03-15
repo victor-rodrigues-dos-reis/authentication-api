@@ -1,7 +1,8 @@
 const jwt = require('jsonwebtoken');
-const authConfig = require('../config/auth');
 const TokenBlackList = require('../models/TokenBlackList');
 const crypto = require('crypto');
+
+const tokenSecret = process.env.TOKEN_SECRET;
 
 module.exports = async (request, response, next) => {
     const authHeader = request.headers.authorization;
@@ -50,7 +51,7 @@ module.exports = async (request, response, next) => {
 
     // Verifica se o token informado é válido
     try {
-        decodedToken = jwt.verify(token, authConfig.secret);
+        decodedToken = jwt.verify(token, tokenSecret);
 
     } catch (error) {
         return response.status(401).json({'error': 'Invalid token'});
