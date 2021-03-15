@@ -1,10 +1,10 @@
 const { Sequelize } = require('sequelize');
 
-const DATABASE  = 'db_authenticate_api';
-const HOST      = 'localhost';
-const USER      = 'root';
-const PASSWORD  = '';
-const DIALECT   = 'mysql';
+const DATABASE  = process.env.DB_NAME;
+const HOST      = process.env.DB_HOST;
+const USER      = process.env.DB_USER;
+const PASSWORD  = process.env.DB_PASSWORD;
+const DIALECT   = process.env.DB_DIALECT;
 
 // Configurando o banco de dados
 const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
