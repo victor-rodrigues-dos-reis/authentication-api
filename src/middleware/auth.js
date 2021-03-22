@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const TokenBlackList = require('../models/TokenBlackList');
-const crypto = require('crypto');
+const cryptography = require('../helpers/cryptography');
 
 const tokenSecret = process.env.TOKEN_SECRET;
 
@@ -36,8 +36,8 @@ module.exports = async (request, response, next) => {
 
 
 
-
-    const tokenHashed = crypto.createHash('md5').update(authHeader).digest('hex');
+    const randomChar = authHeader.charAt(6);
+    const tokenHashed = cryptography(authHeader);
 
     // Pesquisa pelo token na blacklist
     const tokenExists = await TokenBlackList.findOne({where: {token: tokenHashed}});

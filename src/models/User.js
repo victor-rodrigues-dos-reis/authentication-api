@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../database');
-const crypto = require('crypto');
+const cryptography = require('../helpers/cryptography');
 
 // CRIA A ESTRUTURA DA TABELA "user"
 const UserSchema = sequelize.define('user', {
@@ -34,7 +34,8 @@ const UserSchema = sequelize.define('user', {
 
 // Cria o hash da senha antes de criar um novo usuário no banco
 UserSchema.beforeCreate(async (user, options) => {
-    const hashedPassword = crypto.createHash('md5').update(user.password).digest('hex');;
+    const hashedPassword = cryptography(user.password);
+
     user.password = hashedPassword;
 });
 

@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../database');
-const crypto = require('crypto');
+const cryptography = require('../helpers/cryptography');
 
 // CRIA A ESTRUTURA DA TABELA "token_black_list"
 const TokenBlackListSchema = sequelize.define('token_black_list', {
@@ -22,7 +22,9 @@ const TokenBlackListSchema = sequelize.define('token_black_list', {
 
 // Cria o hash do token antes de adicioná-lo a lista negra
 TokenBlackListSchema.beforeCreate(async (tokenBlackList, options) => {
-    const hashed = crypto.createHash('md5').update(tokenBlackList.token).digest('hex');;
+    const randomChar = tokenBlackList.token.charAt(6);
+    const hashed = cryptography(tokenBlackList.token, randomChar);
+    
     tokenBlackList.token = hashed;
 });
 

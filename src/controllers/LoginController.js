@@ -2,7 +2,7 @@ const User = require('../models/User');
 const TokenBlackList = require('../models/TokenBlackList');
 const Auth = require('./AuthController');
 const {Op} = require('sequelize');
-const crypto = require('crypto');
+const cryptography = require('../helpers/cryptography');
 
 module.exports = {
     // REALIZA LOGIN RETORNANDO UM TOKEN
@@ -11,7 +11,7 @@ module.exports = {
         let token;
 
         // Transforma a senha em um Hash MD5 para comparar com o dado do banco de dados
-        password = crypto.createHash('md5').update(password).digest('hex');
+        password = cryptography(password);
 
         // Busca usuário onde a senha e o username ou o email corresponde ao passado pela requisição
         const userExists = await User.findOne({
@@ -44,6 +44,13 @@ module.exports = {
     // REALIZA O LOGOUT
     async delete(request, response) {
         const token = request.headers.authorization;
+
+        const randomChar = token.charAt(6);
+        const tokenHashed = cryptography(token, randomChar);
+
+        // Busca token que corresponde ao passado pela requisição (hashed)
+        const tokenExists = await TokenBlackList.findOne({
+            where: {token: tokenHashed}});
 
         // Verifica se o token existe na blacklist
         if (tokenExists) 
